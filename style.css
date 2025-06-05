@@ -1,0 +1,306 @@
+body {
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-bar {
+    background-color: #fafaf2;
+    padding: 10px 20px;
+    color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo,
+    .profile {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    background-color: #fafaf2;
+    flex-grow: 1;
+
+    .side-bar {
+        position: sticky;
+        top: 0;
+        border-radius: 20px;
+        /* height: calc(100vh - 50px);
+        align-self: start; */
+        z-index: 100;
+        color: #e6f8f9;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: #036566;
+        padding: 20px;
+    }
+
+    .side-bar ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .side-bar li {
+        padding: 10px 0;
+    }
+
+    .content {
+        display: grid;
+        grid-template-rows: auto 1fr;
+        background-color: #fafaf2;
+
+        padding: 20px;
+        gap: 20px;
+
+        .statistics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+
+            .today-overview,
+            .total-overview {
+                background-color: #fffeff;
+                display: grid;
+                gap: 2rem;
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                padding: 15px;
+                border-radius: 8px;
+
+                .earnings {
+                    background-color: #14caba;
+                }
+
+                .orders {
+                    background-color: #3fa7ea;
+                }
+
+                .customers {
+                    background-color: #fa8649;
+                }
+
+                div {
+                    text-align: center;
+                    color: white;
+                    font-family: sans-serif;
+                    font-size: 1.2rem;
+                    padding: 15px 10px;
+                    border-radius: 6px;
+
+                    h1 {
+                        margin: 0 0 5px 0;
+                        font-size: 1.8rem;
+                    }
+
+                    p {
+                        font-size: 0.8rem;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.charts-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-auto-rows: auto;
+    gap: 20px;
+    padding: 20px;
+}
+
+.profit {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    background-color: #fffeff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.audience {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+    background-color: #fffeff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.feedback {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-color: #fffeff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.visits {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    background-color: #fffeff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.transactions {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    background-color: #fffeff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-wrapper {
+    height: 300px;
+    background-color: #fffeff;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chart-wrapper canvas {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+}
+
+
+/* .charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    background-color: lightblue;
+
+    .graph {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+} */
+
+/* .charts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "profit audience audience"
+    "feedback visits transactions";
+  gap: 20px;
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.profit {
+  grid-area: profit;
+}
+
+.audience {
+  grid-area: audience;
+}
+
+.feedback {
+  grid-area: feedback;
+}
+
+.visits {
+  grid-area: visits;
+}
+
+.transactions {
+  grid-area: transactions;
+}
+
+.graph {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graph img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+} */
+
+
+
+.footer {
+    background-color: #fafaf2;
+    padding: 20px;
+    text-align: center;
+
+}
+
+/* @media (max-width: 992px) {
+    .container {
+        grid-template-columns: 1fr 4fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; 
+    }
+    .content .statistics {
+        grid-template-columns: 1fr; 
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .side-bar {
+    position: static;
+    margin-bottom: 20px;   
+  }
+}
+
+@media (max-width: 480px) {
+    .content .statistics .today-overview,
+    .content .statistics .total-overview {
+    }
+
+    .content .statistics .today-overview div,
+    .content .statistics .total-overview div {
+        font-size: 1rem;
+    }
+
+    .content .statistics .today-overview div h1,
+    .content .statistics .total-overview div h1 {
+        font-size: 1.5rem;
+    }
+
+        .side-bar {
+    position: static;
+    margin-bottom: 20px;   
+  }
+} */

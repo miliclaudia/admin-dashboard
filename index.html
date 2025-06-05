@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="logo">
+            <p>IMG PLACEHOLDER</p>
+            <p>Leaf</p>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search..">
+        </div>
+
+        <div class="profile">
+            <p>mail</p>
+            <p>bell</p>
+            <p>PIC</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="side-bar">
+            <div class="menu">
+                <ul>
+                    <li>Dashboard</li>
+                    <li>Analytics</li>
+                    <li>Financial Records</li>
+                    <li>Procurement</li>
+                    <li>Employee record</li>
+                </ul>
+            </div>
+
+            <div class="log-out">
+                <ul>
+                    <li>Settings</li>
+                    <li>Log out</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="statistics">
+                <div class="today-overview">
+                    <div class="earnings">
+                        <h1>$450</h1>
+                        <p>EARNINGS</p>
+                    </div>
+                    <div class="orders">
+                        <h1>40</h1>
+                        <p>ORDERS</p>
+                    </div>
+                    <div class="customers">
+                        <h1>70</h1>
+                        <p>CUSTOMERS</p>
+                    </div>
+                </div>
+
+                <div class="total-overview">
+                    <div class="earnings">
+                        <h1>8.2K</h1>
+                        <p>EARNINGS</p>
+                    </div>
+                    <div class="orders">
+                        <h1>99K</h1>
+                        <p>ORDERS</p>
+                    </div>
+                    <div class="customers">
+                        <h1>1.3M</h1>
+                        <p>CUSTOMERS</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="charts-container">
+                <div class="chart-wrapper profit">
+                    <canvas id="profitChart"></canvas>
+                </div>
+
+                <div class="chart-wrapper audience">
+                    <canvas id="audienceChart"></canvas>
+                </div>
+
+                <div class="chart-wrapper feedback">
+                    <canvas id="feedbackChart"></canvas>
+                </div>
+
+                <div class="chart-wrapper visits">
+                    <canvas id="visitsChart"></canvas>
+                </div>
+
+                <div class="chart-wrapper transactions">
+                    <canvas id="transactionsChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
